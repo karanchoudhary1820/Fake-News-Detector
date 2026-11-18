@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Fake News Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <style>
+    *{
+      box-sizing: border-box;
+      }
+    body{
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      /* background: url('https://img.freepik.com/premium-photo/vintage-newspaper-collage-background-old-newspapers-textured-backdrop-historical-themes_656098-1047.jpg?w=2000') no-repeat center center fixed; */
+      /* background-size: cover; */
+      /* box-sizing: border-box; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Seoge UI',sans-serif;
+      background:rgba(0,0,0,0.6);
+      }
+   .register-box{
+      background:rgba(0,0,0,0.5);
+      padding: 40px 30px;
+      border-radius:20px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 25px #f5efd6;
+      text-align:center;
+      }
+    .register-box h2{
+      color:rgb(255, 255, 255);
+      margin-bottom: 20px;
+      font-size: 30px;
+      }
+   .register-box input[type="text"],
+   .register-box input[type="password"]{
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      padding:12px;
+      border: none;
+      color: rgb(27, 11, 11);
+      font: 14px;
+      box-shadow:0 0 6px #e0cd7f;
+      outline: none;
+      font-size: 14px;
+      } 
+    
+    .register-box button{
+       border-radius: 10px;
+       border: none;
+       width: 100%;
+       padding: 12px;
+       cursor: pointer;
+       font-size: 16px;
+       background: linear-gradient(to right,#fbf9ef,#e0cd7f);
+       transition: transform 0.3s;
+       color: brown;
+       box-shadow: 0 0 6px pink;
+       }
+     .link {
+      color: white;
+      font-size: 14px;
+      margin-top: 20px;
+      text-align: center;
+      }
+    .register-box a{
+      text-decoration: none;
+      color:rgb(26, 134, 228);
+      }
+   .register-box a:hover{
+      text-decoration: underline;
+      }
+    .error{
+      color: rgb(240, 6, 6);
+      margin-bottom: 10px;
+      font-weight: bold;
+     }
+  
+</style>
+</head>
+<body>
+
+  <div class="register-box">
+    <h2>📝 Register</h2>
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+    <form method="POST" action="/register">
+      <input type="text" name="username" placeholder="Choose a username" required />
+      <input type="password" name="password" placeholder="Choose a password" required />
+      <button type="submit">Register</button>
+    </form>
+    <div class="link"> Already registered? <a href="/login">Login here</a></div>
+  </div>
+
+</body>
+</html>
